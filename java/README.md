@@ -13,9 +13,13 @@ Use the command `./gradlew test` to run the automated tests. This will execute a
 ### Three Areas for Improvement
 The only areas I see improvement are in the StatementPrinter.java file. The Play.java and Performance.java just describe the data structure for the program. The StatementPrinter.java file is where the logic is and where the refactoring should be done.
 
-1. 
+1. I am not a huge fan of the switch statement in the StatementPrinter.java file. I think it would be better to use polymorphism to handle the different play types. This would make the code more extensible and easier to maintain.
+
+2. 
 
 
 
 ### AI Usage
 AI was used to help me get the Java versions lined up with Gradle. I had never used Gradle before. Claude Code was used.
+
+Claude Code was also used to guide me through the issue of polymorphism in OOP Java.
