@@ -4,7 +4,7 @@
 ## Noah Pipes
 ## nmppkb@missouri.edu
 ## 10/20/2026
-
+#### Description: A refactoring of the Theatrical-Players-Refactoring-Kata that led to better readability and maintainability through the usage of polymorphism for different types of plays and their cost/amount calculators.
 
 ### Running the Automated Tests
 I used Java JDK 21 to run this project. You can download it from the official Oracle website or use any other JDK distribution that supports Java 21.
@@ -44,6 +44,34 @@ I am required to add two new automated tests.
 I was able to efficiently add the historical plays by creating another class like the others and calling it `HistoricalCalculator`.
 
 My two new tests test the boundary of the conditional with audience sizes of 20 and 21. For 20, amount is $500 and volume credits are 4. For 21, amount is $515 and volume credits are still 4.
+
+### Final Test Results (printout for Part 5)
+
+```
+./gradlew build
+
+> Task :test
+
+StatementPrinterTests > exactTragedyPlay() PASSED
+
+StatementPrinterTests > size20HistoricalPlay() PASSED
+
+StatementPrinterTests > exampleStatement() PASSED
+
+StatementPrinterTests > statementWithNewPlayTypes() PASSED
+
+StatementPrinterTests > size21HistoricalPlay() PASSED
+
+StatementPrinterTests > smallTragedyPlay() PASSED
+
+BUILD SUCCESSFUL in 1s
+```
+
+### Reflection (Part 5)
++ The biggest refactoring that most improved the design was the usage of polymorphism to delineate between different kinds of plays. The refactoring targeted the switch statement that existed in the StatementPrinter.java's print() function. This switch statement would have become grossly large and cumbersome had even more types of plays been added. By splitting off plays by their type, it is easier to fine-tune the calculations of their different costs. A future developer can now easily add more types of plays, like pastoral or cynical without any fear of breaking the statement printer. In fact, if you think about the goal of the statement printer, its main purpose is to print out a statement (duh), not calculate the total cost. It uses the total cost, but it should be able to enlist the help of other functions to find the value it needs for its report. In Fowler's book, this separation of tasks makes a future requirement much easier. In the first chapter, he chooses to update the requirements and begin generating HTML reports of the statement. The original printer can only plain text, so Fowler creates an HTML "printer." Because the calculation portion has been removed to an external handling function, this addition of the HTML report generator is quite seamless. Fowler defines good code as code that can be easily understood and changed to meet new requirements.
++ My new design with polymorphism helped me add historical plays quickly. Historical plays were added by creating their own HistoricalCalculator, which is returned from the abstract factory PerformanceCalculator. I did not have to edit a switch statement in the StatementPrinter's switch statement, rather I edited a switch statement in the PerformanceCalculator to help it to decide which type of calculator it should return.
++ A maintainability issue that was resolved was the issue of being able to add new types of plays. Previously, the process was painful and required lengthening the switch block in the StatementPrint.java's print() function. Now, the individual play types can be maintained as separate files. They could even be placed in their own folder to clean up the directory (an example of extracting a package/module/folder).
+
 
 ### Takeaways or Things I Learned
 I learned how to use some basic Markdown formatting. I had never really used it formally before. I was also new to using Gradle, but I am impressed with its capabilities.
