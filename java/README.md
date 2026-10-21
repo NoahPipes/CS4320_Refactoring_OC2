@@ -1,8 +1,10 @@
 # Theatrical Players Refactoring Kata
+## https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/tree/main
 
 ## Noah Pipes
 ## nmppkb@missouri.edu
 ## 10/20/2026
+
 
 ### Running the Automated Tests
 I used Java JDK 21 to run this project. You can download it from the official Oracle website or use any other JDK distribution that supports Java 21.
