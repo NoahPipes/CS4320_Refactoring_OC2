@@ -35,7 +35,10 @@ I am required to add two new automated tests.
 1. My first new test tests the total amount of money for if there is a number of people smaller than 30 attending a tragedy play. I would expect it to return $400.00, which it does. I had to create an accepted text file in the `\test\java\theatricalplays` folder. `smallTragedyPlay()`
 2. My second new test tests the total amount of money for if there is a number of people right at 31 attending a tragedy play. This tests the boundary of the conditional. I would expect it to return $410.00, which it does. We also expect an extra credit of 1. I had to create an accepted text file in the `\test\java\theatricalplays` folder. `exactTragedyPlay`
 
+### Extend the Application (Part 4)
+I was able to efficiently add the historical plays by creating another class like the others and calling it `HistoricalCalculator`.
 
+My two new tests test the boundary of the conditional with audience sizes of 20 and 21. For 20, amount is $500 and volume credits are 4. For 21, amount $515 and volume credits are still 4.
 
 ### Takeaways or Things I Learned
 I learned how to use some basic Markdown formatting. I had never really used it formally before. I was also new to using Gradle, but I am impressed with its capabilities.
