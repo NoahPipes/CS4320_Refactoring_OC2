@@ -19,6 +19,9 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
     (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
 
 2. My next change is much smaller, but it is to make it easier to understand. Currently, the code uses var to declare variables. I think it would be better to use explicit types for the variables. This would make the code easier to read and understand. This may be more of a personal preference, but it is something that bothered me. Now, variable types are more clear.
+    (a) I changed the var prefix on several lines in StatementPrinter.java to explicit variable types, like int, String, Play, and PerformanceCalculator.
+    (b) The change improves the design because it is easier to read what is being returned from different functions, something that was confusing me. It was not always clear what a variable held.
+    (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project. 
 
 3. 
 
