@@ -59,6 +59,21 @@ class StatementPrinterTests {
         var result = statementPrinter.print(invoice, plays);
 
         verify(result);
+    }
 
+    // check what the final price for a tragedy play with exactly 31 audience members is
+    // it should be $410.00
+    @Test
+    void exactTragedyPlay() {
+        Map<String, Play> plays = Map.of(
+                "ttyl", new Play("Talk to You Later", "tragedy"));
+
+        Invoice invoice = new Invoice("SAG-AFTRA", List.of(
+                new Performance("ttyl", 31)));
+        
+        StatementPrinter statementPrinter = new StatementPrinter();
+        var result = statementPrinter.print(invoice, plays);
+
+        verify(result);
     }
 }

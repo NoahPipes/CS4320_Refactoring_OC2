@@ -30,13 +30,15 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
 
 ### Improve Automated Tests (Part 3)
 I am required to add two new automated tests.
-1. My first new test tests the total amount of money for if there is a number of people smaller than 30 attending a tragedy play. I would expect it to return $400.00, which it does. I had to create an accepted text file in the `\test\java\theatricalplays` folder.
-2. My second new test tests the total amount of money for if there is a number of people right at 31 attending a tragedy play
+1. My first new test tests the total amount of money for if there is a number of people smaller than 30 attending a tragedy play. I would expect it to return $400.00, which it does. I had to create an accepted text file in the `\test\java\theatricalplays` folder. `smallTragedyPlay()`
+2. My second new test tests the total amount of money for if there is a number of people right at 31 attending a tragedy play. This tests the boundary of the conditional. I would expect it to return $410.00, which it does. We also expect an extra credit of 1. I had to create an accepted text file in the `\test\java\theatricalplays` folder. `exactTragedyPlay`
 
 
 
+### Takeaways or Things I Learned
+I learned how to use some basic Markdown formatting. I had never really used it formally before. I was also new to using Gradle, but I am impressed with its capabilities.
 
 ### AI Usage
 AI was used to help me get the Java versions lined up with Gradle. I had never used Gradle before. Claude Code was used.
 
-Claude Code was also used to guide me through the issue of polymorphism in OOP Java.
+Claude Code was also used to guide me through the issue of polymorphism in OOP Java. AI helped with filling out the repetitive parts of the README.
