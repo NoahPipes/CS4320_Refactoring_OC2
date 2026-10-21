@@ -14,14 +14,14 @@ Use the command `./gradlew build` to run the automated tests. This will execute 
 The only areas I see improvement are in the StatementPrinter.java file. The Play.java and Performance.java just describe the data structure for the program. The StatementPrinter.java file is where the logic is and where the refactoring should be done. I initially made some edits to Play.java but regretted it later because the testing framework uses it directly, so I backtracked.
 
 1. I am not a huge fan of the switch statement in the StatementPrinter.java file. I think it would be better to use polymorphism to handle the different play types. This would make the code more extensible and easier to maintain.
-    +(a) I created a new abstract class called PerformanceCalculator. This class has two subclasses, TragedyCalculator and ComedyCalculator. Each subclass implements the amount() and volumeCredits() methods differently based on the play type. This allows for easy extension in the future if new play types are added.
-    +(b) This improved the design of the code by removing the switch statement and using polymorphism instead. This makes the code more extensible and easier to maintain.
-    +(c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
+    + (a). I created a new abstract class called PerformanceCalculator. This class has two subclasses, TragedyCalculator and ComedyCalculator. Each subclass implements the amount() and volumeCredits() methods differently based on the play type. This allows for easy extension in the future if new play types are added.
+    + (b) This improved the design of the code by removing the switch statement and using polymorphism instead. This makes the code more extensible and easier to maintain.
+    + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
 
 2. My next change is much smaller, but it is to make it easier to understand. Currently, the code uses var to declare variables. I think it would be better to use explicit types for the variables. This would make the code easier to read and understand. This may be more of a personal preference, but it is something that bothered me. Now, variable types are more clear.
-    (a) I changed the var prefix on several lines in StatementPrinter.java to explicit variable types, like int, String, Play, and PerformanceCalculator.
-    (b) The change improves the design because it is easier to read what is being returned from different functions, something that was confusing me. It was not always clear what a variable held.
-    (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project. 
+    + (a) I changed the var prefix on several lines in StatementPrinter.java to explicit variable types, like int, String, Play, and PerformanceCalculator.
+    + (b) The change improves the design because it is easier to read what is being returned from different functions, something that was confusing me. It was not always clear what a variable held.
+    + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project. 
 
 3. 
 
