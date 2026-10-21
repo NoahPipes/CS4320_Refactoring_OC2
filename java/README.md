@@ -30,6 +30,11 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
     + (b) The change improves the design because it is easier to read what is being returned from different functions. You do not have to scan the function as much to find all the points the result is being modified.
     + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
 
+4. I noticed that the StatementPrinter.java file was using the NumberFormat class to format the currency. It technically did this twice in the program, and the code looked messy because it was unclear why there was a division by 100.
+    + (a) I extracted the formatting operation to a protected static function in the class to simplify the main print() function in StatementPrinter.java. The extracted is called usd() because it converts the integer representing the cents to a formatted string in USD (United States Dollars).
+    + (b) The change improves the design because a fellow programmer reading the code can better understand the purpose of `usd(thisAmount)` than `frmt.format(thisAmount / 100)`
+    + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
+
 ### Improve Automated Tests (Part 3)
 I am required to add two new automated tests.
 1. My first new test tests the total amount of money for if there is a number of people smaller than 30 attending a tragedy play. I would expect it to return $400.00, which it does. I had to create an accepted text file in the `\test\java\theatricalplays` folder. `smallTragedyPlay()`
