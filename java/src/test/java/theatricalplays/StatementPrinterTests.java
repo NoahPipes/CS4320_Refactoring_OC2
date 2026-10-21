@@ -90,4 +90,19 @@ class StatementPrinterTests {
 
         verify(result);
     }
+
+    @Test
+    void size21HistoricalPlay() {
+        Map<String, Play> plays = Map.of(
+                "george-washington", new Play("George Washington's Men", "historical"));
+
+        Invoice invoice = new Invoice("Smithsonian", List.of(
+                new Performance("george-washington", 21)));
+        
+        StatementPrinter statementPrinter = new StatementPrinter();
+        var result = statementPrinter.print(invoice, plays);
+
+        verify(result);
+    }
+
 }

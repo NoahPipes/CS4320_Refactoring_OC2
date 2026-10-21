@@ -10,7 +10,7 @@ public class HistoricalCalculator extends PerformanceCalculator {
     public int amount() {
         int result = 50000;
         if (performance.audience > 20) {
-            result += 1500 * (performance.audience - 30);
+            result += 1500 * (performance.audience - 20);
         }
         return result;
     }
