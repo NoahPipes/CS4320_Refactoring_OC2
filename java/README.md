@@ -15,7 +15,9 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
 
 1. I am not a huge fan of the switch statement in the StatementPrinter.java file. I think it would be better to use polymorphism to handle the different play types. This would make the code more extensible and easier to maintain.
 
-2. 
+2. My next change is much smaller, but it is to make it easier to understand. Currently, the code uses var to declare variables. I think it would be better to use explicit types for the variables. This would make the code easier to read and understand. This may be more of a personal preference, but it is something that bothered me. Now, variable types are more clear.
+
+3. 
 
 
 
