@@ -23,6 +23,7 @@ public abstract class PerformanceCalculator {
         switch (play.type) {
             case "tragedy": return new TragedyCalculator(perf);
             case "comedy": return new ComedyCalculator(perf);
+            case "historical": return new HistoricalCalculator(perf);
             default: throw new Error("unknown type: %s".formatted(play.type));
         }
     }
