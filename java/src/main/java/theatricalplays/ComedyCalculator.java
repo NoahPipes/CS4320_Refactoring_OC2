@@ -8,14 +8,14 @@ public class ComedyCalculator extends PerformanceCalculator {
 
     @Override
     public int amount() {
-        int amount = 30000;
+        int result = 30000;
         if (performance.audience > 20) {
-            amount += 10000 + 500 * (performance.audience - 20);
+            result += 10000 + 500 * (performance.audience - 20);
         }
 
-        amount += 300 * performance.audience;
+        result += 300 * performance.audience;
 
-        return amount;
+        return result;
     }
 
     // Uses the parent function's volumeCredits but adds the special comedy bonus

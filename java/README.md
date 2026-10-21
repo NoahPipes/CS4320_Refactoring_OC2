@@ -23,7 +23,10 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
     + (b) The change improves the design because it is easier to read what is being returned from different functions, something that was confusing me. It was not always clear what a variable held.
     + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project. 
 
-3. 
+3.  Something discussed in Fowler's Refactoring book is the usage of the variable name "result." He likes using this name because it makes it clear from the get-go that this variable is the result of the function. I chose to adopt his standard after reading up on the chapter in the book. I think it is a good idea to use this standard because it makes the code easier to read and understand.
+    + (a) I changed the variable name from "amount" to "result" in ComedyCalculator.java and TragedyCalculator.java. This makes it clear that this variable is the result of the function.
+    + (b) The change improves the design because it is easier to read what is being returned from different functions. You do not have to scan the function as much to find all the points the result is being modified.
+    + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
 
 
 
