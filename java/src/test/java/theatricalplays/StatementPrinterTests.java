@@ -44,4 +44,21 @@ class StatementPrinterTests {
             () -> statementPrinter.print(invoice, plays));
         assertEquals("unknown type: history", error.getMessage());
     }
+
+    // check what the final price for a tragedy play with fewer than 30 audience members is
+    // it should be $400.00
+    @Test
+    void smallTragedyPlay() {
+        Map<String, Play> plays = Map.of(
+                "bob-dies", new Play("The Death of Bob", "tragedy"));
+
+        Invoice invoice = new Invoice("SmallCo", List.of(
+                new Performance("bob-dies", 21)));
+        
+        StatementPrinter statementPrinter = new StatementPrinter();
+        var result = statementPrinter.print(invoice, plays);
+
+        verify(result);
+
+    }
 }

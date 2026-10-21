@@ -10,7 +10,7 @@ I used Java JDK 21 to run this project. You can download it from the official Or
 Use the command `./gradlew build` to run the automated tests. This will execute all the test cases and provide a summary of the results.
 
 
-### Three Areas for Improvement
+### Three Areas for Improvement and Refactoring (Parts 1 and 2)
 The only areas I see improvement are in the StatementPrinter.java file. The Play.java and Performance.java just describe the data structure for the program. The StatementPrinter.java file is where the logic is and where the refactoring should be done. I initially made some edits to Play.java but regretted it later because the testing framework uses it directly, so I backtracked.
 
 1. I am not a huge fan of the switch statement in the StatementPrinter.java file. I think it would be better to use polymorphism to handle the different play types. This would make the code more extensible and easier to maintain.
@@ -27,6 +27,12 @@ The only areas I see improvement are in the StatementPrinter.java file. The Play
     + (a) I changed the variable name from "amount" to "result" in ComedyCalculator.java and TragedyCalculator.java. This makes it clear that this variable is the result of the function.
     + (b) The change improves the design because it is easier to read what is being returned from different functions. You do not have to scan the function as much to find all the points the result is being modified.
     + (c) I verified the behavior was preserved by running the `./gradlew build` command, which builds and tests the Gradle project.
+
+### Improve Automated Tests (Part 3)
+I am required to add two new automated tests.
+1. My first new test tests the total amount of money for if there is a number of people smaller than 30 attending a tragedy play. I would expect it to return $400.00, which it does. I had to create an accepted text file in the `\test\java\theatricalplays` folder.
+2. My second new test tests the total amount of money for if there is a number of people right at 31 attending a tragedy play
+
 
 
 
